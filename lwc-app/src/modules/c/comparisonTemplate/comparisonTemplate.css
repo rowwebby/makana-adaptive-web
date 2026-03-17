@@ -1,0 +1,43 @@
+.comparison-template {
+    padding: 16px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.comparison-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.features-section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.feature-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.feature-row:last-child {
+    border-bottom: none;
+}
+
+.feature-name {
+    font-size: 12px;
+    color: #666;
+}
+
+.feature-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+}

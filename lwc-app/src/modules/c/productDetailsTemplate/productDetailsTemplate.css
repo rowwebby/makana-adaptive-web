@@ -1,0 +1,141 @@
+.product-details-template {
+    padding: 16px;
+}
+
+.product-details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 600px) {
+    .product-details-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-image-section {
+    display: flex;
+    justify-content: center;
+}
+
+.product-image-container {
+    max-width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-number {
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.add-to-cart-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.add-to-cart-button:hover {
+    background: #333;
+}
+
+.favorite-button {
+    padding: 12px;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorite-button:hover {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.features-section {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.features-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #1a1a1a;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.feature-name {
+    font-weight: 600;
+    color: #666;
+}
+
+.feature-value {
+    color: #333;
+}

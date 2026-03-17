@@ -1,0 +1,11 @@
+<template>
+    <div class="recs-template">
+        <template lwc:if={hasProducts}>
+            <div class="products-grid">
+                <template for:each={products} for:item="product">
+                    <c-product-card key={product.id} product={product}></c-product-card>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

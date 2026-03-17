@@ -1,0 +1,51 @@
+<template>
+    <template lwc:if={hasProduct}>
+        <div class="product-details-template">
+            <div class="product-details-container">
+                <div class="product-image-section">
+                    <div class="product-image-container">
+                        <img src={productImage} alt={productName} />
+                    </div>
+                </div>
+                <div class="product-info-section">
+                    <template lwc:if={hasItemNumber}>
+                        <div class="item-number">ITEM NO.: {productItemNumber}</div>
+                    </template>
+                    <h1 class="product-name">{productName}</h1>
+                    <div class="product-price">{productPrice}</div>
+                    <template lwc:if={hasRating}>
+                        <c-product-stars rating={productRating} size="large"></c-product-stars>
+                    </template>
+                    <div class="action-buttons">
+                        <button class="add-to-cart-button" onclick={handleAddToCart}>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                            ADD TO CART
+                        </button>
+                        <button class="favorite-button" onclick={handleFavoriteClick}>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <template lwc:if={hasFeatures}>
+                        <div class="features-section">
+                            <h2 class="features-title">FEATURES</h2>
+                            <ul class="features-list">
+                                <template for:each={productFeatures} for:item="feature">
+                                    <li key={feature.id} class="feature-item">
+                                        <span class="feature-name">{feature.name}:</span>
+                                        <span class="feature-value">{feature.value}</span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

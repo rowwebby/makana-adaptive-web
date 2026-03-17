@@ -1,0 +1,23 @@
+<template>
+    <div class="comparison-template">
+        <template lwc:if={hasProducts}>
+            <div class="comparison-grid">
+                <template for:each={displayProducts} for:item="product">
+                    <div key={product.id} class="comparison-column">
+                        <c-product-card product={product}></c-product-card>
+                        <template lwc:if={hasFeatures}>
+                            <div class="features-section">
+                                <template for:each={product.featureRows} for:item="feature">
+                                    <div key={feature.id} class="feature-row">
+                                        <div class="feature-name">{feature.name}</div>
+                                        <div class="feature-value">{feature.value}</div>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
